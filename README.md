@@ -17,7 +17,7 @@ I want to measure the runtime, and also visualize the graphs easily.
 ## Getting Started
  * Clone the repo
  * Install dependencies (via pipenv)
- * run main.py (via pipenv)
+ * run main_graphs.py (via pipenv)
    ```
    pipenv exec python main.py
    ```

@@ -1,5 +1,4 @@
 from graphs.models import Graph, Edge, Vertex
-from dynamic.common_sequences import lcs_length
 
 
 def main_dfs():
@@ -27,14 +26,5 @@ def main_dfs():
     dot.render("images/test.gv")
 
 
-def main_lcs():
-    X = "abc123"
-    Y = "abc1234"
-
-    max_lcs = lcs_length(X, Y)
-
-    print("Longest Commmon Sequence: {0}".format(max_lcs))
-
-if (__name__ == "__main__"):
-    # main_dfs()
-    main_lcs()
+if __name__ == "__main__":
+    main_dfs()
