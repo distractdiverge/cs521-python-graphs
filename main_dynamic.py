@@ -2,20 +2,22 @@ from dynamic.common_sequences import lcs_length
 
 
 def main_lcs():
-    X = "abc123"
-    Y = "abc1234"
+    print_lcs("a", "a")
+    print_lcs("ab", "ab")
+    print_lcs("abc", "abc")
+    print_lcs("a", "ab")
+    print_lcs("ab", "a")
+    print_lcs("ba", "a")
+    print_lcs("a", "ba")
 
-    b, c = lcs_length(X, Y)
 
-    print("Longest Common Sequence of: {0} and {1}".format(X, Y))
+def print_lcs(x, y):
+    length = lcs_length(x, y)
 
-    for row in b:
-        print(row)
-
+    print("Longest Common Sequence of: {0} and {1}".format(x, y))
+    print("Length: {0}".format(length))
     print("\n")
-
-    for row in c:
-        print(row)
+    return length
 
 
 if __name__ == "__main__":
