@@ -29,4 +29,19 @@ def lcs_length(X, Y):
     return c[m][n]
 
 
+def inc_sequence(X):
+    m = len(X)
+
+    print("m={0}".format(m))
+
+    # Initialize array for length of increasing sub-sequence
+    c = [1 for i in range(0, m)]
+
+    for i in range(1, m):
+        if X[i] >= X[i-1]:
+            c[i] = c[i-1] + 1
+
+    return c
+
+
 
