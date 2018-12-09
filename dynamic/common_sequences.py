@@ -29,19 +29,27 @@ def lcs_length(X, Y):
     return c[m][n]
 
 
+# HW5 Problem 1.a.
 def inc_sequence(X):
     m = len(X)
 
     print("m={0}".format(m))
 
     # Initialize array for length of increasing sub-sequence
+    # HW5 Problem 1.a.
     c = [1 for i in range(0, m)]
 
     for i in range(1, m):
         if X[i] >= X[i-1]:
             c[i] = c[i-1] + 1
 
-    return c
+    # HW5 - Problem 1.b.
+    max_len = 0
+    for j in c:
+        if j > max_len:
+            max_len = j
+
+    return c, max_len
 
 
 

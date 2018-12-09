@@ -37,13 +37,13 @@ def print_lcs(x, y):
 
 def test_inc():
     print("\n")
-    x = [random.randint(0, i) for i in range(0, 10)]
+    x = [random.randint(0, 10) for i in range(0, 10)]
 
     print("Input: {0}".format(x))
 
-    lengths = inc_sequence(x)
+    lengths, max_length = inc_sequence(x)
 
-    print("Result: {0}".format(lengths))
+    print("Result: {0}; Max Length: {1}".format(lengths, max_length))
 
 
 if __name__ == "__main__":
