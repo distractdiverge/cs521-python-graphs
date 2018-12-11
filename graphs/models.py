@@ -3,9 +3,10 @@ import graphviz
 
 
 class Graph:
-    def __init__(self):
+    def __init__(self, directed=False):
         self.vertices = []
         self.edges = []
+        self.directed = directed
 
     def __repr__(self):
         print("<Graph NumVertices={0}, NumEdges={1}>".format(len(self.vertices), len(self.edges)))
@@ -22,8 +23,28 @@ class Graph:
 
         return result
 
+    def contains_edge(self, source, target):
+        edge = self.find_edge(source, target)
+
+        return edge is not None
+
+    def find_edge(self, source, target):
+        for edge in self.edges:
+            if edge.source == source and edge.target == target:
+                return edge
+
+            if edge.source == target and edge.target == source:
+                return edge
+
+        return None
+
     def to_graphviz(self):
-        dot = graphviz.Digraph(format="png", engine="neato")
+
+        if self.directed:
+            dot = graphviz.Digraph(format="png", engine="neato")
+        else:
+            dot = graphviz.Graph(format="png", engine="neato")
+
         dot.node_attr.update(color='coral3', style='filled')
 
         for vertex in self.vertices:
